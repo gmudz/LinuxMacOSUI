@@ -1,0 +1,18 @@
+#!/bin/bash
+export PATH="$HOME/.local/bin:$PATH"
+export QT_PLUGIN_PATH="/usr/lib/x86_64-linux-gnu/qt6/plugins:$HOME/.local/lib/qt6/plugins:$QT_PLUGIN_PATH"
+export QML2_IMPORT_PATH="$HOME/.config/quickshell/dms:$HOME/.local/lib/qt6/qml:/usr/lib/x86_64-linux-gnu/qt6/qml:$QML2_IMPORT_PATH"
+export QML_IMPORT_PATH="$HOME/.config/quickshell/dms:$HOME/.local/lib/qt6/qml:/usr/lib/x86_64-linux-gnu/qt6/qml:$QML_IMPORT_PATH"
+
+if [ "$1" = "restart" ]; then
+    if systemctl --user is-active --quiet dms.service; then
+        systemctl --user restart dms.service
+    else
+        pkill -u "$USER" -f "dms-bin run" 2>/dev/null || true
+        pkill -u "$USER" -f "quickshell.*dms" 2>/dev/null || true
+        sleep 0.5
+        exec $HOME/.local/bin/dms-bin run "${@:2}"
+    fi
+else
+    exec $HOME/.local/bin/dms-bin "$@"
+fi

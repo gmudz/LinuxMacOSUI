@@ -1,0 +1,72 @@
+{
+  "dankKDEConnect": {
+    "enabled": true,
+    "selectedDeviceId": "49afc846f35d453f954d23c12337181d"
+  },
+  "powerOptions": {
+    "enabled": true,
+    "noTrigger": true,
+    "trigger": ""
+  },
+  "dmsScreenshot": {
+    "enabled": true
+  },
+  "grimblast": {
+    "enabled": false
+  },
+  "niriScreenshot": {
+    "enabled": true
+  },
+  "dms-niri-screenshot": {
+    "mode": "interactive"
+  },
+  "claudeCodeUsage": {
+    "enabled": true
+  },
+  "antigravityUsage": {
+    "enabled": false
+  },
+  "amdGpuMonitor": {
+    "enabled": false
+  },
+  "cavaVisualizer": {
+    "enabled": true
+  },
+  "dankAudioVisualizer": {
+    "enabled": true
+  },
+  "appShortcut": {
+    "enabled": true
+  },
+  "dankDesktopWeather": {
+    "enabled": true
+  },
+  "keybindingCheatSheet": {
+    "enabled": true
+  },
+  "githubNotifier": {
+    "enabled": true
+  },
+  "musicTheme": {
+    "enabled": true
+  },
+  "systemMonitorPlus": {
+    "enabled": true,
+    "ramUsageEnabled": true,
+    "gpuTempEnabled": true,
+    "networkSpeedEnabled": true,
+    "diskPartitionUsageEnabled": false,
+    "cpuTempEnabled": true,
+    "cpuUsageVisualStyle": "gauge",
+    "cpuTempVisualStyle": "gauge",
+    "ramUsageVisualStyle": "gauge",
+    "gpuTempVisualStyle": "gauge",
+    "diskPartitionUsageVisualStyle": "gauge",
+    "networkSpeedVisualStyle": "default",
+    "cpuUsageColorizeText": true,
+    "cpuTempColorizeText": true,
+    "ramUsageColorizeText": true,
+    "gpuTempColorizeText": true,
+    "networkSpeedColorizeText": true
+  }
+}

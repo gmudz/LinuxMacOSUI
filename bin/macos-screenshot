@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+# macOS-style Screenshot Helper for Niri & Wayland
+
+SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
+mkdir -p "$SCREENSHOTS_DIR"
+
+TIMESTAMP=$(date +"%Y-%m-%d_at_%H.%M.%S")
+FILENAME="Screenshot_$TIMESTAMP.png"
+FILEPATH="$SCREENSHOTS_DIR/$FILENAME"
+SOUND_FILE="/usr/share/sounds/freedesktop/stereo/screen-capture.oga"
+
+play_sound() {
+    if command -v pw-play >/dev/null 2>&1; then
+        pw-play "$SOUND_FILE" >/dev/null 2>&1 &
+    elif command -v paplay >/dev/null 2>&1; then
+        paplay "$SOUND_FILE" >/dev/null 2>&1 &
+    fi
+}
+
+send_notify() {
+    notify-send -i "$FILEPATH" -a "Screenshot" "Screenshot Captured" "Saved to ~/Pictures/Screenshots and copied to clipboard."
+}
+
+MODE="${1:-area}"
+
+case "$MODE" in
+    "area")
+        # macOS Cmd+Shift+4 behavior: select area with crosshair
+        GEOMETRY=$(slurp -b "#00000044" -c "#00ffff88" -w 2 -s "#ffffff11")
+        if [ -n "$GEOMETRY" ]; then
+            sleep 0.05
+            grim -g "$GEOMETRY" "$FILEPATH"
+            wl-copy < "$FILEPATH"
+            play_sound
+            send_notify
+        fi
+        ;;
+    "screen")
+        # macOS Cmd+Shift+3 behavior: capture entire screen
+        sleep 0.05
+        grim "$FILEPATH"
+        wl-copy < "$FILEPATH"
+        play_sound
+        send_notify
+        ;;
+    "edit")
+        # macOS Cmd+Shift+5 behavior: interactive edit and annotation
+        GEOMETRY=$(slurp -b "#00000044" -c "#00ffff88" -w 2 -s "#ffffff11")
+        if [ -n "$GEOMETRY" ]; then
+            play_sound
+            grim -g "$GEOMETRY" - | swappy -f - -o "$FILEPATH"
+            if [ -f "$FILEPATH" ]; then
+                wl-copy < "$FILEPATH"
+                send_notify
+            fi
+        fi
+        ;;
+    *)
+        grim "$FILEPATH"
+        wl-copy < "$FILEPATH"
+        play_sound
+        send_notify
+        ;;
+esac

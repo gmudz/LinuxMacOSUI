@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <filter id="shadowR" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <linearGradient id="bgGradR" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A3E47"/>
+      <stop offset="100%" stop-color="#1B1D22"/>
+    </linearGradient>
+    <linearGradient id="rocketBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D2D6DC"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9500"/>
+      <stop offset="100%" stop-color="#FF3B30"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect x="4" y="4" width="56" height="56" rx="13" ry="13" fill="url(#bgGradR)" filter="url(#shadowR)"/>
+  <rect x="4.5" y="4.5" width="55" height="55" rx="12.5" ry="12.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- Rocket Body & Wings -->
+  <!-- Left Wing -->
+  <path d="M21 34 L15 44 C14.5 45 15.5 46 16.5 45.5 L26 39.5 Z" fill="#E84A36"/>
+  <!-- Right Wing -->
+  <path d="M34 21 L44 15 C45 14.5 46 15.5 45.5 16.5 L39.5 26 Z" fill="#E84A36"/>
+  
+  <!-- Exhaust Flame -->
+  <path d="M18 43 L12 50 C11 51.5 13.5 53 14.5 51.5 L21 46 Z" fill="url(#flame)"/>
+  <path d="M17 44 L14 48 C13.5 49 14.8 49.5 15.2 48.8 L19 45.5 Z" fill="#FFCC00"/>
+
+  <!-- Main Fuselage -->
+  <path d="M49 15 C49 15 37 18 27 28 C21 34 20 39 20 41 C20 41.5 20.5 42 21 42 C23 42 28 41 34 35 C44 25 47 13 47 13 Z" fill="url(#rocketBody)"/>
+  <!-- Nosecone Red -->
+  <path d="M49 15 C47.5 13.5 47 13 47 13 C47 13 45 15 42 18 C44 20 46 22 46 22 C49 19 49 15 49 15 Z" fill="#E84A36"/>
+
+  <!-- Porthole Window -->
+  <circle cx="34.5" cy="27.5" r="4.2" fill="#2C3038"/>
+  <circle cx="34.5" cy="27.5" r="3.2" fill="#48B4FF"/>
+  <circle cx="33.5" cy="26.5" r="1" fill="#FFFFFF"/>
+</svg>
