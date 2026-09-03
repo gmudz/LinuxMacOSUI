@@ -17,7 +17,36 @@
 
 ---
 
+<p align="center">
+  <img src="assets/screenshots/desktop_overview.png" alt="LinuxMacOSUI Desktop Overview" width="95%">
+</p>
+
 </div>
+
+## 📸 Visual Showcase
+
+<div align="center">
+
+### 🚀 macOS Launchpad & 🎛️ Control Center Dashboard
+<p align="center">
+  <img src="assets/screenshots/launchpad_grid.png" alt="macOS Launchpad Grid" width="49%">
+  <img src="assets/screenshots/control_center_dashboard.png" alt="Control Center Dashboard" width="49%">
+</p>
+
+### 💻 Fastfetch Terminal & 🌐 Multitasking Workflow
+<p align="center">
+  <img src="assets/screenshots/fastfetch_terminal_dock.png" alt="Fastfetch Terminal with Dock" width="49%">
+  <img src="assets/screenshots/macos_workflow.png" alt="macOS Workflow" width="49%">
+</p>
+
+### 🔔 Native Rounded Notification Toast
+<p align="center">
+  <img src="assets/screenshots/notification_toast.png" alt="Notification Toast" width="60%">
+</p>
+
+</div>
+
+---
 
 ## 🌟 Overview
 
