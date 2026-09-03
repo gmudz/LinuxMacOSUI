@@ -141,6 +141,13 @@ if [ ! -d "$HOME/.config/quickshell/dms" ] || [ ! -f "$HOME/.local/bin/dms-bin" 
     rm -rf "$TMP_DMS_DIR"
 fi
 
+# Apply DMS QML Overrides (Dock auto-hide and proper window size struts)
+if [ -d "$SCRIPT_DIR/config/dms-overrides" ]; then
+    echo -e "${CYAN}• Applying tuned DMS QML overrides (Dock auto-hide & window sizing)...${NC}"
+    mkdir -p "$HOME/.config/quickshell/dms"
+    cp -rf "$SCRIPT_DIR/config/dms-overrides/"* "$HOME/.config/quickshell/dms/"
+fi
+
 # Backup Existing Configurations
 echo -e "${BLUE}▶ [5/8] Creating safety backup of existing configurations...${NC}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
