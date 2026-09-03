@@ -6,7 +6,10 @@
 layout {
     gaps 4
 
-    
+    struts {
+        top 38
+        bottom 76
+    }
 
     border {
         width 1
