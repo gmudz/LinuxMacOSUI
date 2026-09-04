@@ -4,6 +4,10 @@
 
 ### Transform Your Linux Desktop into a Sleek, Fluid, macOS-Inspired Workstation
 
+### **By MUDZ ("Murad Ashkar")**
+
+[![Author](https://img.shields.io/badge/Author-MUDZ%20(Murad%20Ashkar)-blueviolet?style=flat&logo=github)](https://github.com/gmudz)
+
 [![Linux](https://img.shields.io/badge/Platform-Linux%20%7C%20Wayland-FCC624.svg?logo=linux&logoColor=black)](https://www.kernel.org/)
 [![Niri](https://img.shields.io/badge/Compositor-Niri%20Scrollable%20Tiling-00CCCC.svg)](https://github.com/YaLTeR/niri)
 [![Shell](https://img.shields.io/badge/Shell-DankMaterialShell%20(DMS)-FF5722.svg)](https://github.com/AvengeMedia/DankMaterialShell)
