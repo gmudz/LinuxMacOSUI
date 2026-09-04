@@ -293,11 +293,11 @@ Variants {
                     if (win.is_fullscreen)
                         return true;
 
-                    // Maximized window (Mod+M, Mod+F maximize-column, or fullscreen)
+                    // Maximized window to edges (Mod+M) - exclude Mod+F maximize-column so dock stays visible
                     if (win.layout) {
                         const winW = (win.layout.window_size && win.layout.window_size[0]) || (win.layout.tile_size && win.layout.tile_size[0]) || 0;
                         const winH = (win.layout.window_size && win.layout.window_size[1]) || (win.layout.tile_size && win.layout.tile_size[1]) || 0;
-                        if (winW >= (screenWidth - 40) && winH >= (screenHeight - 140)) {
+                        if (winW >= (screenWidth - 40) && winH >= (screenHeight - 65)) {
                             return true;
                         }
                     }
@@ -356,11 +356,11 @@ Variants {
                     if (win.is_fullscreen)
                         return true;
 
-                    // Maximized window (Mod+M, Mod+F maximize-column, or fullscreen)
+                    // Maximized window to edges (Mod+M) - exclude Mod+F maximize-column so dock stays visible
                     if (win.is_focused && win.layout) {
                         const winH = (win.layout.window_size && win.layout.window_size[1]) || (win.layout.tile_size && win.layout.tile_size[1]) || 0;
                         const winW = (win.layout.window_size && win.layout.window_size[0]) || (win.layout.tile_size && win.layout.tile_size[0]) || 0;
-                        if (winW >= (screenWidth - 40) && winH >= (screenHeight - 140)) {
+                        if (winW >= (screenWidth - 40) && winH >= (screenHeight - 65)) {
                             return true;
                         }
                     }
